@@ -167,12 +167,9 @@
 			<configuration>
 				<encoding>UTF-8</encoding>
 				<consoleOutput>true</consoleOutput>
-				<failsOnError>false</failsOnError>
-				<linkXRef>false</linkXRef>
-				<configLocation>checkstyle.xml</configLocation>
 			</configuration>
 			<goals>
-			<goal>check</goal>
+			<goal>checkstyle:checkstyle</goal>
 			</goals>
 		</execution>
 	</executions>
