@@ -75,7 +75,6 @@
               <groupId>org.codehaus.mojo</groupId>
               <artifactId>taglist-maven-plugin</artifactId>
             </plugin>
-            <reporting>
              <plugin>
              <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-checkstyle-plugin</artifactId>
@@ -84,7 +83,6 @@
                    <configLocation>checkstyle.xml</configLocation>
                  </configuration>
               </plugin>
-            </reporting>
           </reportPlugins>
         </configuration>
       </plugin>
