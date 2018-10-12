@@ -2,7 +2,7 @@
 serverName:"preprod",
 collection:"parallelWorkFlowDef",
 key:"name",
-type:"insert",
+type1:"insert",
 dbName:"talentpool",
 data : {
     "name" : "TESTT",
