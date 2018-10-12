@@ -2,7 +2,7 @@
 "serverName":"preprod",
 "collection":"parallelWorkFlowDef",
 "key1":"name",
-"type1":"insert",
+"type1":"update",
 "dbName":"talentpool",
 "data":{
     "name" : "TESTT",
@@ -17,7 +17,7 @@
         ],
         "Interview Scheduled" : [ 
             "Shortlist", 
-            "Schedule Interview - I"
+            "Schedule Interview -yygygygygyI"
         ],
         "Interview Canceled" : [ 
             "Shortlist", 
