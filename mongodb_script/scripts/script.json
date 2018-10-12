@@ -1,11 +1,11 @@
 {
-serverName:"preprod",
-collection:"parallelWorkFlowDef",
-key1:"name",
-type1:"insert",
-dbName:"talentpool",
-data:{
-    "name" : "TESTTT",
+"serverName":"preprod",
+"collection":"parallelWorkFlowDef",
+"key":"name",
+"type1":"insert",
+"dbName":"talentpool",
+"data":{
+    "name" : "TESTT",
     "finalState" : "Joined",
     "probablePastActionsForAState" : {
         "Pending" : [],
@@ -17,7 +17,7 @@ data:{
         ],
         "Interview Scheduled" : [ 
             "Shortlist", 
-            "Schedule Interview - y"
+            "Schedule Interview - I"
         ],
         "Interview Canceled" : [ 
             "Shortlist", 
