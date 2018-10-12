@@ -4,8 +4,8 @@ collection:"parallelWorkFlowDef",
 key1:"name",
 type1:"insert",
 dbName:"talentpool",
-data : {
-    "name" : "TESTT",
+data:{
+    "name" : "TESTTT",
     "finalState" : "Joined",
     "probablePastActionsForAState" : {
         "Pending" : [],
