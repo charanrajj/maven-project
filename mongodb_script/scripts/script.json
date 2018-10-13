@@ -6,7 +6,7 @@
 "dbName":"talentpool",
 "data":{
     "name" : "TESTTV",
-    "finalState" : "Not Joined",
+    "finalState" : "Joined",
     "probablePastActionsForAState" : {
         "Pending" : [],
         "Shortlisted" : [ 
@@ -17,7 +17,7 @@
         ],
         "Interview Scheduled" : [ 
             "Shortlist", 
-            "Schedule Interview -I"
+            "Schedule Interview -bbbbbbbbI"
         ],
         "Interview Canceled" : [ 
             "Shortlist", 
