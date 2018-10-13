@@ -1,0 +1,1088 @@
+{
+"serverName":"preprod",
+"collection":"parallelWorkFlowDef",
+"key1":"name",
+"type1":"update",
+"dbName":"talentpool",
+"data":{
+    "name" : "TESTTUT",
+    "finalState" : "Joined",
+    "probablePastActionsForAState" : {
+        "Pending" : [],
+        "Shortlisted" : [ 
+            "Shortlist"
+        ],
+        "On Hold" : [ 
+            "Put On Hold"
+        ],
+        "Interview Scheduled" : [ 
+            "Shortlist", 
+            "Schedule Interview -adfbcdI"
+        ],
+        "Interview Canceled" : [ 
+            "Shortlist", 
+            "Schedule Interview - I"
+        ],
+        "Interview Rejected" : [ 
+            "Shortlist", 
+            "Schedule Interview - I", 
+            "Interview Reject - I"
+        ],
+        "Interview Selected" : [ 
+            "Shortlist", 
+            "Schedule Interview - I", 
+            "Interview Select - I"
+        ],
+        "Offer Made" : [ 
+            "Shortlist", 
+            "Make An Offer"
+        ],
+        "Documents Requested" : [ 
+            "Shortlist", 
+            "Request Documents"
+        ],
+        "Documents Submitted" : [ 
+            "Shortlist", 
+            "Request Documents", 
+            "Submit Documents"
+        ],
+        "Documents Accepted" : [ 
+            "Shortlist", 
+            "Request Documents", 
+            "Submit Documents", 
+            "Accept Documents"
+        ],
+        "Documents Rejected" : [ 
+            "Shortlist", 
+            "Request Documents", 
+            "Submit Documents", 
+            "Reject Documents"
+        ],
+        "Selection On Hold" : [ 
+            "Shortlist"
+        ],
+        "Rejected" : [ 
+            "Reject"
+        ],
+        "Offer Sent" : [ 
+            "Shortlist", 
+            "Make An Offer", 
+            "Send Offer"
+        ],
+        "Offer Rejected" : [ 
+            "Shortlist", 
+            "Make An Offer", 
+            "Send Offer", 
+            "Reject Offer"
+        ],
+        "Offer Accepted" : [ 
+            "Shortlist", 
+            "Make An Offer", 
+            "Send Offer", 
+            "Accept Offer"
+        ],
+        "Offer Revoked" : [ 
+            "Shortlist", 
+            "Make An Offer", 
+            "Send Offer", 
+            "Revoke Offer"
+        ],
+        "Joined" : [ 
+            "Shortlist", 
+            "Make An Offer", 
+            "Send Offer", 
+            "Accept Offer", 
+            "Mark As Joined"
+        ]
+    },
+    "stateTransitionActions" : {
+        "Apply" : {
+            "stageName" : "Screening",
+            "subFlowType" : "ScreeningFlow",
+            "stateName" : "Pending",
+            "displayName" : "Pending",
+            "stateOrder" : 100,
+            "stageOrder" : 1,
+            "actionOrder" : 0,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Candidate"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Shortlist" : {
+            "stageName" : "Screening",
+            "subFlowType" : "ScreeningFlow",
+            "stateName" : "Shortlisted",
+            "displayName" : "Shortlist",
+            "stateOrder" : 110,
+            "stageOrder" : 1,
+            "actionOrder" : 10,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Put On Hold" : {
+            "stageName" : "Screening",
+            "subFlowType" : "ScreeningFlow",
+            "stateName" : "On Hold",
+            "displayName" : "Put On Hold",
+            "stateOrder" : 120,
+            "stageOrder" : 1,
+            "actionOrder" : 220,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Reject" : {
+            "stageName" : "Screening",
+            "subFlowType" : "ScreeningFlow",
+            "stateName" : "Rejected",
+            "displayName" : "Reject",
+            "stateOrder" : 130,
+            "stageOrder" : 1,
+            "actionOrder" : 210,
+            "revert" : [],
+            "weight" : -1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Shortlist to Another Job" : {
+            "stageName" : "Screening",
+            "subFlowType" : "ScreeningFlow",
+            "stateName" : "Shortlisted",
+            "displayName" : "Shortlist to Another Job",
+            "stateOrder" : 140,
+            "stageOrder" : 1,
+            "actionOrder" : 530,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Request Documents" : {
+            "stageName" : "Selection",
+            "subFlowType" : "DocumentVerificationFlow",
+            "stateName" : "Documents Requested",
+            "displayName" : "Request Documents",
+            "stateOrder" : 210,
+            "stageOrder" : 2,
+            "actionOrder" : 150,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Submit Documents" : {
+            "stageName" : "Selection",
+            "subFlowType" : "DocumentVerificationFlow",
+            "stateName" : "Documents Submitted",
+            "displayName" : "Submit Documents",
+            "stateOrder" : 220,
+            "stageOrder" : 2,
+            "actionOrder" : 140,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Candidate"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Accept Documents" : {
+            "stageName" : "Selection",
+            "subFlowType" : "DocumentVerificationFlow",
+            "stateName" : "Documents Accepted",
+            "displayName" : "Accept Documents",
+            "stateOrder" : 230,
+            "stageOrder" : 2,
+            "actionOrder" : 70,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Reject Documents" : {
+            "stageName" : "Selection",
+            "subFlowType" : "DocumentVerificationFlow",
+            "stateName" : "Documents Rejected",
+            "displayName" : "Reject Documents",
+            "stateOrder" : 400,
+            "stageOrder" : 2,
+            "actionOrder" : 200,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Schedule Interview" : {
+            "stageName" : "Selection",
+            "subFlowType" : "Interview",
+            "stateName" : "Interview Scheduled",
+            "displayName" : "Schedule Interview",
+            "stateOrder" : 310,
+            "stageOrder" : 3,
+            "actionOrder" : 130,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : true,
+            "actionGroup" : "Default"
+        },
+        "Provide Feedback" : {
+            "stageName" : "Selection",
+            "subFlowType" : "Interview",
+            "stateName" : "Interviewed",
+            "displayName" : "Provide Feedback",
+            "stateOrder" : 320,
+            "stageOrder" : 3,
+            "actionOrder" : 80,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Interviewer"
+            ],
+            "groupBySubFlowName" : true,
+            "actionGroup" : "WithSubflow"
+        },
+        "Edit" : {
+            "stageName" : "Selection",
+            "subFlowType" : "Interview",
+            "stateName" : "Interview Scheduled",
+            "displayName" : "Edit",
+            "stateOrder" : 315,
+            "stageOrder" : 3,
+            "actionOrder" : 110,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : true,
+            "actionGroup" : "WithSubflow"
+        },
+        "Cancel" : {
+            "stageName" : "Selection",
+            "subFlowType" : "Interview",
+            "stateName" : "Interview Canceled",
+            "displayName" : "Cancel",
+            "stateOrder" : 325,
+            "stageOrder" : 3,
+            "actionOrder" : 120,
+            "revert" : [ 
+                "Interview Scheduled"
+            ],
+            "weight" : 0,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : true,
+            "actionGroup" : "WithSubflow"
+        },
+        "Interview Select" : {
+            "stageName" : "Selection",
+            "subFlowType" : "Interview",
+            "stateName" : "Interview Selected",
+            "displayName" : "Interview Select",
+            "stateOrder" : 330,
+            "stageOrder" : 3,
+            "actionOrder" : 90,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : true,
+            "actionGroup" : "WithSubflow"
+        },
+        "Interview Reject" : {
+            "stageName" : "Selection",
+            "subFlowType" : "Interview",
+            "stateName" : "Interview Rejected",
+            "displayName" : "Interview Reject",
+            "stateOrder" : 340,
+            "stageOrder" : 3,
+            "actionOrder" : 100,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : true,
+            "actionGroup" : "WithSubflow"
+        },
+        "Select" : {
+            "stageName" : "Selection",
+            "subFlowType" : "SelectionSubFlow",
+            "displayName" : "Select",
+            "stateName" : "Selected",
+            "stateOrder" : 500,
+            "stageOrder" : 4,
+            "actionOrder" : 300,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Regret" : {
+            "stageName" : "Selection",
+            "subFlowType" : "SelectionSubFlow",
+            "stateName" : "Not Selected",
+            "displayName" : "Regret",
+            "stateOrder" : 500,
+            "stageOrder" : 4,
+            "actionOrder" : 310,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Hold Selection" : {
+            "stageName" : "Selection",
+            "subFlowType" : "SelectionSubFlow",
+            "stateName" : "Selection On Hold",
+            "displayName" : "Hold Selection",
+            "stateOrder" : 500,
+            "stageOrder" : 4,
+            "actionOrder" : 320,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Make An Offer" : {
+            "stageName" : "Joining",
+            "subFlowType" : "OfferWorkflow",
+            "stateName" : "Offer Made",
+            "displayName" : "Make An Offer",
+            "stateOrder" : 700,
+            "stageOrder" : 5,
+            "actionOrder" : 160,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Send Offer" : {
+            "stageName" : "Joining",
+            "subFlowType" : "OfferWorkflow",
+            "stateName" : "Offer Sent",
+            "displayName" : "Send Offer",
+            "stateOrder" : 710,
+            "stageOrder" : 5,
+            "actionOrder" : 60,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Accept Offer" : {
+            "stageName" : "Joining",
+            "subFlowType" : "OfferWorkflow",
+            "stateName" : "Offer Accepted",
+            "displayName" : "Accept Offer",
+            "stateOrder" : 720,
+            "stageOrder" : 5,
+            "actionOrder" : 40,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Candidate"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Reject Offer" : {
+            "stageName" : "Joining",
+            "subFlowType" : "OfferWorkflow",
+            "stateName" : "Offer Rejected",
+            "displayName" : "Reject Offer",
+            "stateOrder" : 730,
+            "stageOrder" : 5,
+            "actionOrder" : 50,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Candidate"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Revoke Offer" : {
+            "stageName" : "Joining",
+            "subFlowType" : "OfferWorkflow",
+            "stateName" : "Offer Revoked",
+            "displayName" : "Revoke Offer",
+            "stateOrder" : 740,
+            "stageOrder" : 5,
+            "actionOrder" : 30,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        },
+        "Mark As Joined" : {
+            "stageName" : "Joining",
+            "subFlowType" : "OfferWorkflow",
+            "stateName" : "Joined",
+            "displayName" : "Mark As Joined",
+            "stateOrder" : 800,
+            "stageOrder" : 5,
+            "actionOrder" : 20,
+            "revert" : [],
+            "weight" : 1,
+            "actors" : [ 
+                "Recruiter"
+            ],
+            "groupBySubFlowName" : false,
+            "actionGroup" : "Default"
+        }
+    },
+    "initialStateString" : "Screening.ScreeningFlow.ScreeningFlow.Pending",
+    "multiConditionalActions" : [ 
+        {
+            "validForCurrentStage" : "Screening",
+            "flowCurrStateConditions" : [ 
+                "Screening.ScreeningFlow.ScreeningFlow.Shortlisted"
+            ],
+            "flowCurrStateNotConditions" : [],
+            "flowAnyStateNotConditions" : [],
+            "actionsOfSameConditions" : [ 
+                {
+                    "actionName" : "Put On Hold",
+                    "subFlowType" : "ScreeningFlow",
+                    "actionType" : "resultantState"
+                }, 
+                {
+                    "actionName" : "Reject",
+                    "subFlowType" : "ScreeningFlow",
+                    "actionType" : "resultantState"
+                }, 
+                {
+                    "actionName" : "Schedule Interview",
+                    "subFlowType" : "Interview",
+                    "actionType" : "newNamedSubflow"
+                }, 
+                {
+                    "actionName" : "Request Documents",
+                    "subFlowType" : "DocumentVerificationFlow",
+                    "actionType" : "newSubFlow"
+                }, 
+                {
+                    "actionName" : "Make An Offer",
+                    "subFlowType" : "OfferWorkflow",
+                    "actionType" : "newSubFlow"
+                }
+            ]
+        }, 
+        {
+            "validForCurrentStage" : "Selection",
+            "flowCurrStateConditions" : [],
+            "flowCurrStateNotConditions" : [ 
+                "Selection.SelectionSubFlow.SelectionSubFlow.Selection On Hold"
+            ],
+            "flowAnyStateNotConditions" : [],
+            "actionsOfSameConditions" : [ 
+                {
+                    "actionName" : "Hold Selection",
+                    "subFlowType" : "SelectionSubFlow",
+                    "actionType" : "newSubFlow"
+                }
+            ]
+        }, 
+        {
+            "validForCurrentStage" : "Selection",
+            "flowCurrStateConditions" : [],
+            "flowCurrStateNotConditions" : [ 
+                "Selection.SelectionSubFlow.SelectionSubFlow.Selected"
+            ],
+            "flowAnyStateNotConditions" : [],
+            "actionsOfSameConditions" : [ 
+                {
+                    "actionName" : "Select",
+                    "subFlowType" : "SelectionSubFlow",
+                    "actionType" : "newSubFlow"
+                }
+            ]
+        }, 
+        {
+            "validForCurrentStage" : "Selection",
+            "flowCurrStateConditions" : [],
+            "flowCurrStateNotConditions" : [ 
+                "Selection.SelectionSubFlow.SelectionSubFlow.Not Selected"
+            ],
+            "flowAnyStateNotConditions" : [],
+            "actionsOfSameConditions" : [ 
+                {
+                    "actionName" : "Regret",
+                    "subFlowType" : "SelectionSubFlow",
+                    "actionType" : "newSubFlow"
+                }
+            ]
+        }, 
+        {
+            "validForCurrentStage" : "",
+            "flowCurrStateConditions" : [],
+            "flowCurrStateNotConditions" : [ 
+                "Screening.ScreeningFlow.ScreeningFlow.Rejected", 
+                "Joining.OfferWorkflow.OfferWorkflow.Joined"
+            ],
+            "flowAnyStateNotConditions" : [],
+            "actionsOfSameConditions" : [ 
+                {
+                    "actionName" : "Make An Offer",
+                    "subFlowType" : "OfferWorkflow",
+                    "actionType" : "newSubFlow"
+                }, 
+                {
+                    "actionName" : "Mark As Joined",
+                    "subFlowType" : "OfferWorkflow",
+                    "actionType" : "newSubFlow"
+                }
+            ]
+        }
+    ],
+    "SubFlowDefs" : {
+        "ScreeningFlow" : {
+            "type" : "ScreeningFlow",
+            "order" : 1,
+            "stage" : "Screening",
+            "multiple" : false,
+            "namePrefix" : "",
+            "namePrefixesAllowed" : [],
+            "states" : {
+                "" : {
+                    "transitions" : {
+                        "Apply" : "resultantState"
+                    }
+                },
+                "Pending" : {
+                    "transitions" : {
+                        "Shortlist" : "resultantState",
+                        "Put On Hold" : "resultantState",
+                        "Reject" : "resultantState",
+                        "Schedule Interview" : "newNamedSubflow",
+                        "Make An Offer" : "Offer Made",
+                        "Request Documents" : "Documents Requested",
+                        "Shortlist to Another Job" : "resultantState"
+                    }
+                },
+                "Shortlisted" : {
+                    "transitions" : {
+                        "Shortlist to Another Job" : "resultantState"
+                    }
+                },
+                "Rejected" : {
+                    "transitions" : {
+                        "Shortlist to Another Job" : "resultantState",
+                        "Schedule Interview" : "newNamedSubflow",
+                        "Shortlist" : "resultantState",
+                        "Put On Hold" : "resultantState"
+                    }
+                },
+                "On Hold" : {
+                    "transitions" : {
+                        "Shortlist" : "resultantState",
+                        "Schedule Interview" : "newNamedSubflow",
+                        "Reject" : "resultantState",
+                        "Request Documents" : "Documents Requested",
+                        "Make An Offer" : "Offer Made",
+                        "Shortlist to Another Job" : "resultantState"
+                    }
+                }
+            }
+        },
+        "DocumentVerificationFlow" : {
+            "type" : "DocumentVerificationFlow",
+            "order" : 2,
+            "stage" : "Selection",
+            "multiple" : false,
+            "namePrefix" : "",
+            "namePrefixesAllowed" : [],
+            "states" : {
+                "" : {
+                    "transitions" : {
+                        "Request Documents" : "Documents Requested"
+                    },
+                    "type" : ""
+                },
+                "Documents Requested" : {
+                    "transitions" : {
+                        "Schedule Interview" : "newNamedSubflow",
+                        "Submit Documents" : "Documents Submitted",
+                        "Request Documents" : "Documents Requested"
+                    },
+                    "type" : "Documents Requested"
+                },
+                "Documents Submitted" : {
+                    "transitions" : {
+                        "Schedule Interview" : "newNamedSubflow",
+                        "Request Documents" : "Documents Requested",
+                        "Accept Documents" : "Documents Accepted",
+                        "Reject Documents" : "Documents Rejected",
+                        "Submit Documents" : "Documents Submitted"
+                    },
+                    "type" : "Documents Submitted"
+                },
+                "Documents Accepted" : {
+                    "transitions" : {
+                        "Schedule Interview" : "newNamedSubflow",
+                        "Request Documents" : "Documents Requested",
+                        "Make An Offer" : "Offer Made"
+                    },
+                    "type" : "Documents Accepted"
+                },
+                "Documents Rejected" : {
+                    "transitions" : {
+                        "Request Documents" : "Documents Requested"
+                    },
+                    "type" : "Documents Rejected"
+                }
+            }
+        },
+        "Interview" : {
+            "type" : "Interview",
+            "order" : 3,
+            "stage" : "Selection",
+            "multiple" : true,
+            "namePrefix" : "",
+            "namePrefixesAllowed" : [ 
+                "I", 
+                "II", 
+                "III", 
+                "IV", 
+                "V", 
+                "VI", 
+                "VII", 
+                "VIII", 
+                "IX", 
+                "X", 
+                "XI", 
+                "XII", 
+                "XIII", 
+                "XIV", 
+                "XV"
+            ],
+            "states" : {
+                "" : {
+                    "transitions" : {
+                        "Schedule Interview" : "currentSubflow"
+                    },
+                    "type" : ""
+                },
+                "Interview Scheduled" : {
+                    "transitions" : {
+                        "Re-Schedule" : "currentSubflow",
+                        "Cancel" : "currentSubflow",
+                        "Provide Feedback" : "currentSubflow",
+                        "Interview Select" : "currentSubflow",
+                        "Interview Reject" : "currentSubflow",
+                        "Request Documents" : "differentSubFlow",
+                        "Make An Offer" : "differentSubFlow",
+                        "Schedule Interview" : "newNamedSubflow"
+                    },
+                    "type" : "Interview Scheduled"
+                },
+                "Interview Canceled" : {
+                    "transitions" : {},
+                    "type" : ""
+                },
+                "Interviewed" : {
+                    "transitions" : {
+                        "Interview Select" : "currentSubflow",
+                        "Interview Reject" : "currentSubflow",
+                        "Schedule Interview" : "newNamedSubflow",
+                        "Provide Feedback" : "currentSubflow"
+                    },
+                    "type" : "Interviewed"
+                },
+                "Interview Selected" : {
+                    "transitions" : {
+                        "Interview Reject" : "currentSubflow",
+                        "Schedule Interview" : "newNamedSubflow",
+                        "Request Documents" : "differentSubFlow",
+                        "Make An Offer" : "differentSubFlow",
+                        "Provide Feedback" : "currentSubflow"
+                    },
+                    "type" : "Interview Selected"
+                },
+                "Interview Rejected" : {
+                    "transitions" : {
+                        "Schedule Interview" : "newNamedSubflow",
+                        "Interview Select" : "currentSubflow",
+                        "Provide Feedback" : "currentSubflow"
+                    },
+                    "type" : "Interview Rejected"
+                }
+            }
+        },
+        "SelectionSubFlow" : {
+            "type" : "SelectionSubFlow",
+            "order" : 4,
+            "stage" : "Selection",
+            "multiple" : false,
+            "namePrefix" : "",
+            "namePrefixesAllowed" : [],
+            "states" : {
+                "" : {
+                    "transitions" : {
+                        "Hold Selection" : "Selection On Hold"
+                    },
+                    "type" : ""
+                },
+                "Selection On Hold" : {
+                    "transitions" : {
+                        "Select" : "Selected",
+                        "Regret" : "Not Selected",
+                        "Request Documents" : "differentSubFlow"
+                    },
+                    "type" : "Selection On Hold"
+                },
+                "Selected" : {
+                    "transitions" : {
+                        "Request Documents" : "differentSubFlow",
+                        "Regret" : "Not Selected"
+                    },
+                    "type" : "Selected"
+                },
+                "Not Selected" : {
+                    "transitions" : {
+                        "Select" : "Selected",
+                        "Hold Selection" : "Selection On Hold"
+                    },
+                    "type" : "Not Selected"
+                }
+            }
+        },
+        "OfferWorkflow" : {
+            "type" : "OfferWorkflow",
+            "order" : 5,
+            "stage" : "Joining",
+            "multiple" : false,
+            "namePrefix" : "",
+            "namePrefixesAllowed" : [],
+            "states" : {
+                "" : {
+                    "transitions" : {
+                        "Make An Offer" : "Offer Made",
+                        "Send Offer" : "Offer Sent"
+                    },
+                    "type" : ""
+                },
+                "Offer Made" : {
+                    "transitions" : {
+                        "Send Offer" : "Offer Sent",
+                        "Revoke Offer" : "Offer Revoked",
+                        "Make An Offer" : "Offer Made"
+                    },
+                    "type" : "Offer Made"
+                },
+                "Offer Sent" : {
+                    "transitions" : {
+                        "Accept Offer" : "Offer Accepted",
+                        "Reject Offer" : "Offer Rejected",
+                        "Revoke Offer" : "Offer Revoked"
+                    },
+                    "type" : "Offer Sent"
+                },
+                "Offer Rejected" : {
+                    "transitions" : {
+                        "Make An Offer" : "Offer Made"
+                    },
+                    "type" : "Offer Rejected"
+                },
+                "Offer Accepted" : {
+                    "transitions" : {
+                        "Mark As Joined" : "Joined",
+                        "Revoke Offer" : "Offer Revoked"
+                    },
+                    "type" : "Offer Accepted"
+                },
+                "Offer Revoked" : {
+                    "transitions" : {
+                        "Make An Offer" : "Offer Made"
+                    },
+                    "type" : "Offer Revoked"
+                },
+                "Joined" : {
+                    "transitions" : {},
+                    "type" : "Joined"
+                }
+            }
+        }
+    },
+    "probableActionOrder" : {
+        "Pending" : {
+            "Shortlist" : 1,
+            "Reject" : 2,
+            "Put On Hold" : 3,
+            "Schedule Interview" : 4,
+            "Make An Offer" : 5,
+            "Request Documents" : 6,
+            "Shortlist to Another Job" : 7
+        },
+        "Shortlisted" : {
+            "Schedule Interview" : 1,
+            "Request Documents" : 2,
+            "Make An Offer" : 3,
+            "Mark As Joined" : 4,
+            "Reject" : 5,
+            "Put On Hold" : 6,
+            "Shortlist to Another Job" : 7
+        },
+        "On Hold" : {
+            "Shortlist" : 1,
+            "Schedule Interview" : 2,
+            "Reject" : 3,
+            "Request Documents" : 4,
+            "Make An Offer" : 5,
+            "Shortlist to Another Job" : 6,
+            "Mark As Joined" : 7
+        },
+        "Rejected" : {
+            "Shortlist to Another Job" : 1,
+            "Schedule Interview" : 2,
+            "Shortlist" : 3,
+            "Put On Hold" : 4
+        },
+        "Interview Scheduled" : {
+            "Select" : 1,
+            "Regret" : 2,
+            "Hold Selection" : 3,
+            "Request Documents" : 4,
+            "Make An Offer" : 5,
+            "Schedule Interview" : 6,
+            "Mark As Joined" : 7,
+            "Shortlist to Another Job" : 8,
+            "Interview Select" : 9,
+            "Interview Reject " : 10,
+            "Provide Feedback" : 11,
+            "ReSchedule Interview" : 12,
+            "Re-Schedule" : 12,
+            "Edit" : 12,
+            "Cancel Interview" : 13,
+            "Cancel" : 13
+        },
+        "Interview Rejected" : {
+            "Regret" : 1,
+            "Select" : 2,
+            "Hold Selection" : 3,
+            "Schedule Interview" : 4,
+            "Request Documents" : 5,
+            "Make An Offer" : 6,
+            "Mark As Joined" : 7,
+            "Shortlist to Another Job" : 8,
+            "Interview Select" : 9,
+            "Provide Feedback" : 10
+        },
+        "Interview Selected" : {
+            "Select" : 1,
+            "Regret" : 2,
+            "Hold Selection" : 3,
+            "Schedule Interview" : 4,
+            "Shortlist to Another Job" : 5,
+            "Make An Offer" : 6,
+            "Mark As Joined" : 7,
+            "Request Documents " : 8,
+            "Interview Reject " : 9,
+            "Provide Feedback" : 10
+        },
+        "Documents Requested" : {
+            "Select" : 1,
+            "Regret" : 2,
+            "Hold Selection" : 3,
+            "Shortlist" : 4,
+            "Reject" : 5,
+            "Put On Hold" : 6,
+            "Shortlist to Another Job" : 7,
+            "Schedule Interview" : 8,
+            "Make An Offer" : 9,
+            "Mark As Joined" : 10,
+            "Request Documents" : 11,
+            "Submit Documents" : 12
+        },
+        "Documents Submitted" : {
+            "Accept Documents" : 1,
+            "Reject Documents" : 2,
+            "Select" : 3,
+            "Regret" : 4,
+            "Hold Selection" : 5,
+            "Shortlist" : 6,
+            "Reject" : 7,
+            "Put On Hold" : 8,
+            "Shortlist to Another Job" : 9,
+            "Schedule Interview" : 10,
+            "Make An Offer" : 11,
+            "Mark As Joined" : 12,
+            "Request Documents" : 13,
+            "Submit Documents" : 14
+        },
+        "Documents Accepted" : {
+            "Select" : 1,
+            "Regret" : 2,
+            "Hold Selection" : 3,
+            "Shortlist" : 4,
+            "Reject" : 5,
+            "Put On Hold" : 6,
+            "Shortlist to Another Job" : 7,
+            "Schedule Interview" : 8,
+            "Make An Offer" : 9,
+            "Mark As Joined" : 10,
+            "Request Documents" : 11,
+            "Submit Documents" : 12
+        },
+        "Documents Rejected" : {
+            "Regret" : 1,
+            "Select" : 2,
+            "Hold Selection" : 3,
+            "Request Documents" : 4,
+            "Shortlist" : 5,
+            "Reject" : 6,
+            "Put On Hold" : 7,
+            "Shortlist to Another Job" : 8,
+            "Schedule Interview" : 9,
+            "Make An Offer" : 10,
+            "Mark As Joined" : 11,
+            "Submit Documents" : 12
+        },
+        "Selected" : {
+            "Make An Offer" : 1,
+            "Request Documents" : 2,
+            "Regret" : 3,
+            "Mark As Joined" : 4,
+            "Hold Selection" : 5,
+            "Shortlist to Another Job" : 6
+        },
+        "Not Selected" : {
+            "Select" : 1,
+            "Hold Selection" : 2,
+            "Shortlist to Another Job" : 3,
+            "Request Documents" : 4,
+            "Make An Offer" : 5,
+            "Mark As Joined" : 6
+        },
+        "Selection On Hold" : {
+            "Select" : 1,
+            "Regret" : 2,
+            "Make An Offer" : 3,
+            "Request Documents" : 4,
+            "Mark As Joined" : 5,
+            "Shortlist to Another Job" : 6
+        },
+        "Offer Made" : {
+            "Send Offer" : 1,
+            "Revoke Offer" : 2,
+            "Make An Offer" : 3,
+            "Mark As Joined" : 4,
+            "Accept Documents" : 5,
+            "Reject Documents" : 6,
+            "Request Documents" : 7,
+            "Shortlist to Another Job" : 8,
+            "Accept Offer" : 9,
+            "Reject Offer" : 10,
+            "Submit Documents" : 11
+        },
+        "Offer Sent" : {
+            "Mark As Joined" : 1,
+            "Revoke Offer" : 2,
+            "Make An Offer" : 3,
+            "Shortlist to Another Job" : 4,
+            "Accept Offer" : 5,
+            "Reject Offer" : 6
+        },
+        "Offer Rejected" : {
+            "Make An Offer" : 1,
+            "Mark As Joined" : 2,
+            "Shortlist to Another Job" : 3,
+            "Request Documents" : 4
+        },
+        "Offer Accepted" : {
+            "Mark As Joined" : 1,
+            "Revoke Offer" : 2,
+            "Request Documents" : 3,
+            "Shortlist to Another Job" : 4,
+            "Make An Offer" : 5
+        },
+        "Offer Revoked" : {
+            "Make An Offer" : 1,
+            "Shortlist to Another Job" : 2,
+            "Mark As Joined" : 3
+        },
+        "Joined" : {}
+    },
+    "stateActionMapping" : {
+        "Pending" : "Apply",
+        "Shortlisted" : "Shortlist",
+        "On Hold" : "Put On Hold",
+        "Rejected" : "Reject",
+        "Interview Scheduled" : "Schedule Interview",
+        "Interviewed" : "Provide Feedback",
+        "Interview Rejected" : "Interview Reject",
+        "Interview Selected" : "Interview Select",
+        "Documents Requested" : "Request Documents",
+        "Documents Submitted" : "Submit Documents",
+        "Documents Accepted" : "Accept Documents",
+        "Documents Rejected" : "Reject Documents",
+        "Selected" : "Select",
+        "Not Selected" : "Regret",
+        "Selection On Hold" : "Hold Selection",
+        "Fitment Initiated" : "Make Fitment",
+        "Fitment L1 Pending" : "Req Fitment Approval L1",
+        "Fitment L1 Approved" : "Fitment L1 Approve",
+        "Fitment L1 Rejected" : "Fitment L1 Rejected",
+        "Fitment L2 Pending" : "Req Fitment Approval L2",
+        "Fitment L2 Approved" : "Fitment L2 Approve",
+        "Fitment L2 Rejected" : "Fitment L2 Rejected",
+        "Offer Sent" : "Send Offer",
+        "Offer Rejected" : "Reject Offer",
+        "Offer Accepted" : "Accept Offer",
+        "Offer Revoked" : "Revoke Offer",
+        "Joined" : "Mark As Joined"
+    }
+}
+}
