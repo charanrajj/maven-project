@@ -5,7 +5,7 @@
 "type1":"insert",
 "dbName":"talentpool",
 "data":{
-    "name" : "TESTTT",
+    "name" : "TESTTTo",
     "finalState" : "Joined",
     "probablePastActionsForAState" : {
         "Pending" : [],
