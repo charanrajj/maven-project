@@ -1,10 +1,9 @@
 {
-"serverName":"preprod",
 "collection":"parallelWorkFlowDef",
 "key1":"name",
 "type1":"get",
 "dbName":"talentpool",
 "data":{
-    "name" : "TESTTT"
+    "name" : "WORKFLOW_APF_UNIVERSITY_TEACHING_ROLE"
 }
 }
