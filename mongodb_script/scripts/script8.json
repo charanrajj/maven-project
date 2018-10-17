@@ -1,11 +1,10 @@
 {
-"serverName":"preprod",
 "collection":"parallelWorkFlowDef",
 "key1":"name",
 "type1":"insert",
 "dbName":"talentpool",
 "data":{
-    "name" : "TESTTO",
+    "name" : "TESTTOu",
     "finalState" : "Joined",
     "probablePastActionsForAState" : {
         "Pending" : [],
