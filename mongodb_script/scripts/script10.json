@@ -7,6 +7,7 @@
     "name" : "TESTTOu",
     "finalState" : "Joined",
     "probablePastActionsForAState" : {
+        
         "Pending" : [],
         "Shortlisted" : [ 
             "Shortlist"
